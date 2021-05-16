@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
-date:   2021-05-15 18:31:35 -0500
-categories: jekyll update
+title:  House Robber 1 
+date:   2021-05-15 22:20:00 -0500
+categories: lc algorithms house-robber
 ---
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
