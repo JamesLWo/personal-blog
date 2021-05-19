@@ -11,7 +11,7 @@ The House Robber problem introduces a pretty canonical dynamic programming appro
 
 The problem specification is pretty straight forward - you have an array of integers, where each number represents a value (presumably representing a house with some value waiting to be robbed?). You, as a robber, need to strategically pick values (rob the houses) such that you ***maximize the total value*** while ***avoid picking two adjacent values***. So in typical fashion, you have an objective and a constraint.
 
-Problem can be found [here](https://leetcode.com/problems/house-robber/) 
+Problem can be found [here](https://leetcode.com/problems/house-robber/){:target="_blank"}
 
 First intuition: Greedy Approach?
 -----------------
