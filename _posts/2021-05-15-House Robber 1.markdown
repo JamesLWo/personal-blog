@@ -54,3 +54,28 @@ Let's tie things up real quick. We now have the solution when we consider the fi
 
 
 So the recurrence relation should be clear now. More formally, if we know f(i-1) and f(i-2), we can find out f(i) quickly (kind of like fibonacci right?). To clarify, f(i) here would represent the maximum value we can get when considering the first i elements. f(i) would then be the maximum between values[i] + f(i-2) and f(i-1). 
+
+If 50% of the challenge is to recognize the problem as DP, the other 40% or so is developing the recurrence relation. Other 10% is just translating the recurrence relation into code.
+
+
+Code
+----------------------
+The following code does specifically bottom up dynamic progrmaming instead of memoization dynamic programming. The difference will probably be discussed in another post.
+
+
+```
+class Solution {
+    public int rob(int[] nums) {
+        int prevMax = 0;
+        int currentMax =0;
+        for(int num : nums){
+            int temp = currentMax;
+            currentMax = Math.max(num + prevMax, currentMax);
+            prevMax = temp;
+            
+        }
+        return currentMax;
+        
+    }
+}
+```

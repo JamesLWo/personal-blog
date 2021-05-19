@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-05-19T14:26:04-05:00</updated><id>/feed.xml</id><title type="html">James’ Blog</title><subtitle></subtitle><entry><title type="html">House Robber 2 - Problem Reduction</title><link href="/lc/algorithms/house-robber/2021/05/19/House-Robber-2-Problem-Reduction.html" rel="alternate" type="text/html" title="House Robber 2 - Problem Reduction" /><published>2021-05-19T13:29:00-05:00</published><updated>2021-05-19T13:29:00-05:00</updated><id>/lc/algorithms/house-robber/2021/05/19/House%20Robber%202%20-%20Problem%20Reduction</id><content type="html" xml:base="/lc/algorithms/house-robber/2021/05/19/House-Robber-2-Problem-Reduction.html">&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-05-19T14:44:47-05:00</updated><id>/feed.xml</id><title type="html">James’ Blog</title><subtitle></subtitle><entry><title type="html">House Robber 2 - Problem Reduction</title><link href="/lc/algorithms/house-robber/2021/05/19/House-Robber-2-Problem-Reduction.html" rel="alternate" type="text/html" title="House Robber 2 - Problem Reduction" /><published>2021-05-19T13:29:00-05:00</published><updated>2021-05-19T13:29:00-05:00</updated><id>/lc/algorithms/house-robber/2021/05/19/House%20Robber%202%20-%20Problem%20Reduction</id><content type="html" xml:base="/lc/algorithms/house-robber/2021/05/19/House-Robber-2-Problem-Reduction.html">&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;I like House Robber 2 because we do not have to do much to get the solution. It showcases a cool example of problem reduction - reducing a problem down to another problem. In problem reduction, if you have the solution too the equivalent problem, you also have the solution to the original problem! So the only challenge here is recognizing the problem is similar to one you have done before (in this case, it’s House Robber 1!)&lt;/p&gt;
 
 &lt;p&gt;The problem specification: The objective, constraints, and input are the same as the ones in House Robber 1. The difference is that the houses are arranged in a circle, meaning the first house is next to the second house…and that’s the only difference.&lt;/p&gt;
@@ -78,4 +78,25 @@ public int originalRobberProblem(int[] nums){
 
 &lt;p&gt;Let’s tie things up real quick. We now have the solution when we consider the first 4 elements. We also have the solution when considering the first 3 elements. Now, we can repeat the logic above to get the answer for the first 5 elements! You can see that we can repeat this process until we reach the solution when considering all the elements!&lt;/p&gt;
 
-&lt;p&gt;So the recurrence relation should be clear now. More formally, if we know f(i-1) and f(i-2), we can find out f(i) quickly (kind of like fibonacci right?). To clarify, f(i) here would represent the maximum value we can get when considering the first i elements. f(i) would then be the maximum between values[i] + f(i-2) and f(i-1).&lt;/p&gt;</content><author><name></name></author><category term="lc" /><category term="algorithms" /><category term="house-robber" /><summary type="html">Introduction The House Robber problem introduces a pretty canonical dynamic programming approach so it’s a good starting point to getting comfortable with DP. I’ll probably write an introductory article eventually about DP, but this post will asssume some basic understanding.</summary></entry></feed>
+&lt;p&gt;So the recurrence relation should be clear now. More formally, if we know f(i-1) and f(i-2), we can find out f(i) quickly (kind of like fibonacci right?). To clarify, f(i) here would represent the maximum value we can get when considering the first i elements. f(i) would then be the maximum between values[i] + f(i-2) and f(i-1).&lt;/p&gt;
+
+&lt;p&gt;If 50% of the challenge is to recognize the problem as DP, the other 40% or so is developing the recurrence relation. Other 10% is just translating the recurrence relation into code.&lt;/p&gt;
+
+&lt;h2 id=&quot;code&quot;&gt;Code&lt;/h2&gt;
+&lt;p&gt;The following code does specifically bottom up dynamic progrmaming instead of memoization dynamic programming. The difference will probably be discussed in another post.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class Solution {
+    public int rob(int[] nums) {
+        int prevMax = 0;
+        int currentMax =0;
+        for(int num : nums){
+            int temp = currentMax;
+            currentMax = Math.max(num + prevMax, currentMax);
+            prevMax = temp;
+            
+        }
+        return currentMax;
+        
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="lc" /><category term="algorithms" /><category term="house-robber" /><summary type="html">Introduction The House Robber problem introduces a pretty canonical dynamic programming approach so it’s a good starting point to getting comfortable with DP. I’ll probably write an introductory article eventually about DP, but this post will asssume some basic understanding.</summary></entry></feed>

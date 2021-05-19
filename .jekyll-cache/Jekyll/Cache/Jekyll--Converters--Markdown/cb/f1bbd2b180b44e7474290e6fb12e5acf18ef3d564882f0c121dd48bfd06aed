@@ -1,4 +1,4 @@
-I"G<h2 id="introduction">Introduction</h2>
+I"�<h2 id="introduction">Introduction</h2>
 <p>The House Robber problem introduces a pretty canonical dynamic programming approach so it’s a good starting point to getting comfortable with DP. I’ll probably write an introductory article eventually about DP, but this post will asssume some basic understanding.</p>
 
 <p>The problem specification is pretty straight forward - you have an array of integers, where each number represents a value (presumably representing a house with some value waiting to be robbed?). You, as a robber, need to strategically pick values (rob the houses) such that you <strong><em>maximize the total value</em></strong> while <strong><em>avoid picking two adjacent values</em></strong>. So in typical fashion, you have an objective and a constraint.</p>
@@ -39,4 +39,25 @@
 <p>Let’s tie things up real quick. We now have the solution when we consider the first 4 elements. We also have the solution when considering the first 3 elements. Now, we can repeat the logic above to get the answer for the first 5 elements! You can see that we can repeat this process until we reach the solution when considering all the elements!</p>
 
 <p>So the recurrence relation should be clear now. More formally, if we know f(i-1) and f(i-2), we can find out f(i) quickly (kind of like fibonacci right?). To clarify, f(i) here would represent the maximum value we can get when considering the first i elements. f(i) would then be the maximum between values[i] + f(i-2) and f(i-1).</p>
+
+<p>If 50% of the challenge is to recognize the problem as DP, the other 40% or so is developing the recurrence relation. Other 10% is just translating the recurrence relation into code.</p>
+
+<h2 id="code">Code</h2>
+<p>The following code does specifically bottom up dynamic progrmaming instead of memoization dynamic programming. The difference will probably be discussed in another post.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Solution {
+    public int rob(int[] nums) {
+        int prevMax = 0;
+        int currentMax =0;
+        for(int num : nums){
+            int temp = currentMax;
+            currentMax = Math.max(num + prevMax, currentMax);
+            prevMax = temp;
+            
+        }
+        return currentMax;
+        
+    }
+}
+</code></pre></div></div>
 :ET
