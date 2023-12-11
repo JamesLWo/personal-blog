@@ -7,7 +7,7 @@ categories: lc algorithms house-robber
 
 Introduction
 --------------
-I like House Robber 2 because we do not have to do much to get the solution. It showcases a cool example of problem reduction - reducing a problem down to another problem. In problem reduction, if you have the solution too the equivalent problem, you also have the solution to the original problem! So the only challenge here is recognizing the problem is similar to one you have done before (in this case, it's House Robber 1!) 
+I like House Robber 2 because we do not have to do much to get the solution. It showcases a cool example of problem reduction - reducing a problem down to another problem. In problem reduction, if you have the solution to the equivalent problem, you also have the solution to the original problem! So the only challenge here is recognizing the problem is similar to one you have done before (in this case, it's House Robber 1!) 
 
 The problem specification: The objective, constraints, and input are the same as the ones in House Robber 1. The difference is that the houses are arranged in a circle, meaning the first house is next to the second house...and that's the only difference.
 
