@@ -24,7 +24,7 @@ Well, maximizing number of values chosen != maximizing total value
 
 Consider the following array: [100, 1, 1, 100, 1]  
 
-With our first approach, we get a total value of 102. With our second, we also get a total value of 102. But we know the answer is 200 here. 
+With our first approach, we get a total value of 102. With our second, we get a total value of 101. But we know the answer is 200 here. 
 
 So what can we do? 
 
